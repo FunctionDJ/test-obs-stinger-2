@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      overflow: hidden;
+    }
+
+    video {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <video src="pipo_stinger.webm">
+  </video>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.slim.dev.js" integrity="sha256-/y7xG1RqDsWi+oiDFxZn6HviaLcrxcTPuBnko7yhD+M=" crossorigin="anonymous"></script>
+  <script>
+    const socket = io("http://localhost:1234")
+
+    socket.on("stinger", () => {
+      document.body.firstElementChild.play()
+    })
+  </script>
+</body>
+</html>
